@@ -8,13 +8,13 @@ function Banner() {
 
   useEffect(() => {
     async function fetchData() {
-      const requests = await axios.get(requests.fetchNetflixOriginals);
+      const requests = await axios.get(request.fetchNetflixOriginals);
       setMovie(
-        request.data.results[
-          Math.floor(Math.random() * request.data.results.length - 1)
+        requests.data.results[
+          Math.floor(Math.random() * requests.data.results.length - 1)
         ]
       );
-      return request;
+      return requests;
     }
     fetchData();
   }, []);
@@ -30,21 +30,23 @@ function Banner() {
       className="banner"
       style={{
         backgroundSize: "cover",
-        backgrounImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
+        backgroundImage: `url(
+          "https://image.tmdb.org/t/p/original/${movie?.backdrop_path}"
+        )`,
         backgroundPosition: "center center",
       }}
     >
       <div className="banner__contents">
-        <h1 className="banner_title">
+        <h1 className="banner__title">
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
         <div className="banner__buttons">
           <button className="banner__button">Play</button>
-          <button className="banner__button">My list</button>
-          <h1 className="banner__description">
-            {truncate(movie?.overview, 150)}
-          </h1>
+          <button className="banner__button">My List</button>
         </div>
+        <h1 className="banner__description">
+          {truncate(movie?.overview, 150)}
+        </h1>
       </div>
 
       <div className="banner--fadeBottom" />

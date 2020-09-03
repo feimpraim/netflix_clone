@@ -1,4 +1,31 @@
-.nav__logo {
+.nav {
+  position: fixed;
+  top: 0;
   display: flex;
-  max-width: 300px;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px;
+  height: 30px;
+  background-color: #111;
+  z-index: 1;
+}
+
+.nav__logo {
+  position: fixed;
+  left: 20px;
+  width: 80px;
+  object-fit: contain;
+}
+
+.nav__avatar {
+  position: fixed;
+  right: 20px;
+  object-fit: contain;
+  width: 30px;
+}
+.na__text {
+  color: white;
+  position: center;
+  object-fit: contain;
+  size: inherit;
 }

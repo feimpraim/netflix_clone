@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       {/*Creating Banner*/}
       <Nav />
-      <Banner title="Nexflix" />
+      <Banner />
       <Row
         title="NETFLIX ORGINALS"
         fetchUrl={request.fetchNetflixOriginals}
