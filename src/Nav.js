@@ -16,18 +16,20 @@ function Nav() {
   }, []);
 
   return (
-    <div className="nav">
-      <img
-        className="nav__logo"
-        src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
-        alt="Netflix logo"
-      />
-      <h1 className="nav__text">App by Fred Impraim</h1>
-      <img
-        className="nav__avatar"
-        src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png"
-        alt="Netflix logo"
-      />
+    <div className={`nav ${show && "nav__black"}`}>
+      <div className="nav__contents">
+        <img
+          className="nav__logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Logo_Netflix.png"
+          alt="Netflix Logo"
+        />
+
+        <img
+          className="nav__avatar"
+          src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png"
+          alt="Netflix Logo"
+        />
+      </div>
     </div>
   );
 }
